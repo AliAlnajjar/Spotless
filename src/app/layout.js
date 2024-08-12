@@ -1,15 +1,19 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 //TODO discuss the metadata details with the client
 export const metadata = {
   title: "Elemran Construction Ltd.",
-  description: "Elemran Construction Ltd. - Quality construction services for residential and commercial projects.",
+  description:
+    "Elemran Construction Ltd. - Quality construction services for residential and commercial projects.",
   openGraph: {
     title: "Elemran Construction Ltd.",
-    description: "Discover our quality construction services for residential and commercial projects.",
+    description:
+      "Discover our quality construction services for residential and commercial projects.",
     url: "https://www.elemranconstruction.com",
     images: [
       {
@@ -32,7 +36,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
