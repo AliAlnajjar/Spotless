@@ -18,6 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  @apply max-w-screen-xl mx-auto;
   background: linear-gradient(
       to bottom,
       transparent,
