@@ -33,7 +33,7 @@ const Header = () => {
       {/* Top Navigation Bar */}
       <nav className="max-w-screen-xl flex px-4 justify-between items-center mx-auto">
         {/* Brand Name / Logo */}
-        <div className="text-2xl font-bold">Spotless</div>
+        <div className="text-4xl font-bold">Spotless</div>
 
         {/* Menu items and language switch for larger screens */}
         <div className="hidden md:flex items-center ml-auto space-x-2">
@@ -85,7 +85,7 @@ const Header = () => {
 
         {/* Hamburger menu for small screens */}
         <button
-          className="md:hidden text-2xl"
+          className="md:hidden text-4xl text-bold"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           ☰
@@ -97,8 +97,8 @@ const Header = () => {
           <div className="fixed inset-0 bg-white flex flex-col items-center justify-center z-50 text-xl">
             {/* Brand and Close Button */}
             <div className="absolute top-4 left-4 right-4 flex justify-between items-center">
-              <div className="text-2xl font-bold">Spotless</div>
-              <button className="text-2xl" onClick={() => setMenuOpen(false)}>
+              <div className="text-4xl font-bold">Spotless</div>
+              <button className="text-3xl" onClick={() => setMenuOpen(false)}>
                 ✕
               </button>
             </div>
