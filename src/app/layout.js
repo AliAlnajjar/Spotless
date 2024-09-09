@@ -7,28 +7,26 @@ const inter = Inter({ subsets: ['latin'] });
 
 //TODO discuss the metadata details with the client
 export const metadata = {
-  title: 'Elemran Construction Ltd.',
-  description:
-    'Elemran Construction Ltd. - Quality construction services for residential and commercial projects.',
+  title: 'Spotless AS',
+  description: 'Spotless AS vaskhjelp firma i Oslo og viken',
   openGraph: {
-    title: 'Elemran Construction Ltd.',
-    description:
-      'Discover our quality construction services for residential and commercial projects.',
-    url: 'https://www.elemranconstruction.com',
+    title: 'Spotless AS',
+    description: '',
+    url: 'https://www.spotless.no',
     images: [
       {
         url: '/images/og-image.jpg',
         width: 800,
         height: 600,
-        alt: 'Elemran Construction Project',
+        alt: 'Spotless',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@elemranconstruction',
-    title: 'Elemran Construction Ltd.',
-    description: 'Building Your Vision with Quality and Integrity.',
+    site: '@spotless AS',
+    title: 'spotless AS.',
+    description: '',
     image: '/images/twitter-image.jpg',
   },
 };
