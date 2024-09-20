@@ -38,13 +38,20 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-          href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+          rel="stylesheet"
+        />
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className={inter.className}>
+      <body className="font-sans-serif ">
         <Header />
-        <main>{children}</main>
+        <main className="flex flex-col items-center justify-between  gap-24 lg:gap-36">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
