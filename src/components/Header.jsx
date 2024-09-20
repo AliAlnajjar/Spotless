@@ -1,9 +1,34 @@
 // components/Header.jsx
 'use client';
 //TODO add animation to the menu bar when it goes ffom non sticky yo sticky
+import Image from 'next/image';
 
 import { useState, useEffect } from 'react';
+import { Button } from '@material-tailwind/react';
+import CallIcon from '../../public/icons/phone_in_talk_36dp_5F6368_FILL0_wght400_GRAD0_opsz40.svg';
 
+const CallButton = () => {
+  return (
+    <a href="tel:+4791280406">
+      <Button
+        variant="outlined"
+        size="lg"
+        color="green"
+        className="flex items-center text-bold text-lg text-primary"
+      >
+        <Image
+          src="/icons/phone_in_talk_36dp_5F6368_FILL0_wght400_GRAD0_opsz40.svg"
+          alt="call icon"
+          width={24}
+          height={24}
+          className="object-cover text-primary"
+          priority={true}
+        />
+        91280406
+      </Button>
+    </a>
+  );
+};
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [language, setLanguage] = useState('NO');
@@ -12,7 +37,7 @@ const Header = () => {
   // Effect to add shadow on scroll
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 200) {
+      if (window.scrollY > 300) {
         // Adjust the scroll value as needed
         setIsSticky(true);
       } else {
@@ -26,61 +51,34 @@ const Header = () => {
 
   return (
     <header
-      className={`relative w-full py-4 bg-white transition-all duration-300 z-50 font-sans ${
+      className={`relative w-full py-4 bg-white  transition-all duration-300 z-50 ${
         isSticky ? 'sticky top-0 shadow-md' : ''
       }`}
     >
       {/* Top Navigation Bar */}
-      <nav className="max-w-screen-xl flex px-4 justify-between items-center mx-auto">
+      <nav className="max-w-screen-2xl flex px-4 justify-between items-center mx-auto">
         {/* Brand Name / Logo */}
         <div className="text-4xl font-bold">Spotless</div>
 
         {/* Menu items and language switch for larger screens */}
         <div className="hidden md:flex items-center ml-auto space-x-2">
-          <a href="#home" className="text-lg px-2 py-1.5 hover:underline">
+          <a href="#home" className="text-xl px-2 py-1.5 hover:underline">
             Home
           </a>
-          <a href="#kontakt" className="text-lg px-2 py-1.5 hover:underline">
+          <a href="#kontakt" className="text-xl px-2 py-1.5 hover:underline">
             Kontakt oss
           </a>
-          <a href="#priser" className="text-lg px-2 py-1.5 hover:underline">
+          <a href="#priser" className="text-xl px-2 py-1.5 hover:underline">
             Priser
           </a>
-          <a href="#faq" className="text-lg px-2 py-1.5 hover:underline">
+          <a href="#faq" className="text-xl px-2 py-1.5 hover:underline">
             FAQ
           </a>
         </div>
 
         {/*Action Button*/}
         <div className="hidden md:flex justify-between items-end ml-auto space-x-12">
-          {/* Action Button */}
-          <button className="text-white bg-blue-500 rounded-lg px-4 py-2 hover:bg-blue-600">
-            Få et pristilbud
-          </button>
-
-          {/* Language Switch */}
-          <div className="flex space-x-1 border rounded-lg p-1">
-            <button
-              className={`px-2 py-1 rounded-lg ${
-                language === 'NO'
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-white text-blue-500'
-              }`}
-              onClick={() => setLanguage('NO')}
-            >
-              NO
-            </button>
-            <button
-              className={`px-2 py-1 rounded-lg ${
-                language === 'EN'
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-white text-blue-500'
-              }`}
-              onClick={() => setLanguage('EN')}
-            >
-              EN
-            </button>
-          </div>
+          <CallButton />
         </div>
 
         {/* Hamburger menu for small screens */}
@@ -125,12 +123,7 @@ const Header = () => {
                 </a>
               </li>
               <li className="py-8  w-full flex justify-center">
-                <button
-                  className="text-white bg-blue-500 rounded-lg px-2 py-2 hover:bg-blue-600"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Få et pristilbud
-                </button>
+                <CallButton />
               </li>
             </ul>
           </div>
